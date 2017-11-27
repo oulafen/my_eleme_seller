@@ -16,11 +16,24 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import 'reset-css';
   import  header from 'components/header/header';
   export default {
     name: 'app',
+    data () {
+      return {
+//        goods: goods,
+//        seller: seller
+      }
+    },
+    created() {
+      this.$http.get('/api/seller').then((res) => {
+
+      }, () => {
+
+      })
+    },
     components: {
       "v-header": header
     }

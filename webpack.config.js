@@ -73,7 +73,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       'components': path.resolve(__dirname, './src/components'),
-      'assets': path.resolve(__dirname, './src/assets')
+      'assets': path.resolve(__dirname, './src/assets'),
+      'common': path.resolve(__dirname, './src/common')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -94,6 +95,22 @@ module.exports = {
     })
   ],
   devtool: '#eval-source-map'
+};
+
+/** mock data **/
+if (process.env.NODE_ENV === 'development') {
+  var data = require(path.resolve(__dirname, './src/common/data/data.json'));
+  module.exports.devServer.before = (app) => {
+    app.get('/api/store', function (req, res) {
+      res.json({err_code: 0, data: data.store});
+    });
+    app.get('/api/goods', function (req, res) {
+      res.json({err_code: 0, data: data.goods});
+    });
+    app.get('/api/ratings', function (req, res) {
+      res.json({err_code: 0, data: data.ratings});
+    });
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {
