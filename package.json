@@ -10,6 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "reset-css": "^2.2.1",
     "vue": "^2.4.4"
   },
   "browserslist": [
@@ -26,6 +27,7 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
     "node-sass": "^4.5.3",
+    "postcss-cssnext": "^3.0.2",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.0.5",
     "vue-router": "^3.0.1",

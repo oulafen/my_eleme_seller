@@ -1,0 +1,24 @@
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  .tab {
+    flex: 1;
+    text-align: center;
+    line-height: 40px;
+  }
+  a {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    span {
+      display: inline-block;
+    }
+    &.router-link-active{
+      color: #3190e8;
+      font-weight: 700;
+      span{
+        border-bottom: 3px solid #2395ff;
+      }
+    }
+  }
+}
