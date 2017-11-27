@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-header></v-header>
-    <div class="tabs">
+    <div class="tabs border-1px">
       <div class="tab">
         <router-link to="/goods"><span>商品</span></router-link>
       </div>

@@ -1,6 +1,7 @@
+@import "mixin";
 .tabs {
   display: flex;
-  border-bottom: 1px solid #eee;
+  @include border-1px(#eee);
   .tab {
     flex: 1;
     text-align: center;
