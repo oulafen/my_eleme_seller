@@ -9,6 +9,7 @@ import ratings from 'components/ratings/ratings';
 import store from 'components/store/store';
 
 import 'common/scss/base.scss'
+import 'common/js/base_func.js'
 
 Vue.use(VueRouter);
 Vue.use(VueResource);

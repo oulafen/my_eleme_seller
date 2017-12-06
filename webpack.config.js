@@ -99,7 +99,7 @@ module.exports = {
 
 /** mock data **/
 if (process.env.NODE_ENV === 'development') {
-  var data = require(path.resolve(__dirname, './src/common/data/data.json'));
+  var data = require(path.resolve(__dirname, './resource/data/data.json'));
   module.exports.devServer.before = (app) => {
     app.get('/api/store', function (req, res) {
       res.json({err_code: 0, data: data.store});

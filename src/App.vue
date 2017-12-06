@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-header></v-header>
+    <v-header :store="store"></v-header>
     <div class="tabs border-1px">
       <div class="tab">
         <router-link to="/goods"><span>商品</span></router-link>
@@ -19,17 +19,24 @@
 <script type="text/ecmascript-6">
   import 'reset-css';
   import  header from 'components/header/header';
+  const ERR_OK = 0;
+
   export default {
     name: 'app',
     data () {
       return {
-//        goods: goods,
-//        seller: seller
+        goods: {},
+        store: {}
       }
     },
     created() {
-      this.$http.get('/api/seller').then((res) => {
-
+      var self = this;
+      this.$http.get('/api/store').then((res) => {
+        res = res.body;
+        if(res.err_code == ERR_OK){
+          self.store = res.data;
+//          self.goods = res.goods;
+        }
       }, () => {
 
       })
