@@ -13,12 +13,17 @@
       </div>
     </div>
     <router-view></router-view>
+    <div class="footer">
+      <v-shopcart></v-shopcart>
+    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import 'reset-css';
   import  header from 'components/header/header';
+  import  shopcart from 'components/shopcart/shopcart';
+
   const ERR_OK = 0;
 
   export default {
@@ -42,12 +47,19 @@
       })
     },
     components: {
-      "v-header": header
+      "v-header": header,
+      "v-shopcart": shopcart,
     }
 
   }
 </script>
 
-<style scoped lang="sass">
+<style scoped type="text/scss" lang="scss" rel="stylesheet/scss">
   @import "assets/css/tab.scss";
+  .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
 </style>

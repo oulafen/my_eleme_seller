@@ -19,6 +19,10 @@
               <span class="rmb-label"></span>{{item.specfoods.prize}}
               <span class="rmb-label"></span>{{item.specfoods.prize}}
             </div>
+            <div class="price">
+              <span class="now">￥28</span>
+              <span class="old"></span>
+            </div>
             <div class="cards">
 
             </div>
@@ -119,5 +123,12 @@
     position: absolute;
     bottom: 0;
   }
-
+  .goods .foods-wrapper .price{
+    font-weight: 700;
+    line-height: 1.2rem;
+  }
+  .goods .foods-wrapper .price .now{
+    font-size: 0.7rem;
+    color: rgb(240,20,20);
+  }
 </style>
